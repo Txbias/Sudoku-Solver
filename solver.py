@@ -54,7 +54,7 @@ class Solver:
     def print_sudoku(self):
         for i in range(len(self.sudoku)):
             if i % 3 == 0 and i != 0:
-                print("-------------------------------------------")
+                print("--------------------")
 
             for j in range(len(self.sudoku[0])):
                 if j % 3 == 0 and j != 0:
