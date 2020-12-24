@@ -1,6 +1,19 @@
 class Solver:
-    def __init__(self, sudoku):
-        self.sudoku = sudoku
+    def __init__(self, path):
+        self.sudoku = self._load_sudoku_from_file(path)
+
+    def _load_sudoku_from_file(self, path: str) -> list:
+        with open(path) as file:
+            content = file.read()
+
+        sudoku = list()
+        lines = content.split('\n')
+
+        for line in lines:
+            numbers = [int(x) for x in line.split(' ')]
+            sudoku.append(numbers)
+
+        return sudoku
 
     def is_solved(self):
         empty = self.find_all_empty()
